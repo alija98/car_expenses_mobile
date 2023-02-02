@@ -9,7 +9,10 @@ function App(): JSX.Element {
   RNBootSplash.getVisibilityStatus().then(status => console.log(status));
 
   return (
-    <NavigationContainer onReady={() => RNBootSplash.hide()}>
+    <NavigationContainer
+      onReady={() => {
+        RNBootSplash.hide();
+      }}>
       {isLoggedIn ? null : <AuthStack />}
     </NavigationContainer>
   );

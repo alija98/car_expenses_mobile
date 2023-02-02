@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "car_expenses_mobile_2.app"
-               BlueprintName = "car_expenses_mobile_2"
-               ReferencedContainer = "container:car_expenses_mobile_2.xcodeproj">
+               BlueprintName = "car_expenses_mobile"
+               ReferencedContainer = "container:car_expenses_mobile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
                BuildableName = "car_expenses_mobile_2Tests.xctest"
-               BlueprintName = "car_expenses_mobile_2Tests"
-               ReferencedContainer = "container:car_expenses_mobile_2.xcodeproj">
+               BlueprintName = "car_expenses_mobileTests"
+               ReferencedContainer = "container:car_expenses_mobile.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,8 +56,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "car_expenses_mobile_2.app"
-            BlueprintName = "car_expenses_mobile_2"
-            ReferencedContainer = "container:car_expenses_mobile_2.xcodeproj">
+            BlueprintName = "car_expenses_mobile"
+            ReferencedContainer = "container:car_expenses_mobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,8 +73,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "car_expenses_mobile_2.app"
-            BlueprintName = "car_expenses_mobile_2"
-            ReferencedContainer = "container:car_expenses_mobile_2.xcodeproj">
+            BlueprintName = "car_expenses_mobile"
+            ReferencedContainer = "container:car_expenses_mobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
