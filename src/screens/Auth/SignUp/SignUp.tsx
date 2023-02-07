@@ -1,9 +1,9 @@
 import {Text, SafeAreaView, StatusBar, Button} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {AuthStackParamList} from '../../types/navigation';
+import {AuthStackParamList} from '@utils/helpers/types/navigation';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {colors} from '../../constants/colors';
+import {colors} from '@constants';
 
 const SignUp = () => {
   const navigation = useNavigation<StackNavigationProp<AuthStackParamList>>();

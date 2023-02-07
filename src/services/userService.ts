@@ -1,6 +1,6 @@
-import {API_PATHS} from '../helpers/apiPaths';
-import axios from '../helpers/axios';
-import {CreateUserPost, LogInUserPost} from '../types';
+import {API_PATHS} from '../utils/helpers/apiPaths';
+import axios from '../utils/helpers/axios';
+import {CreateUserPost, LogInUserPost} from '../utils/helpers/types';
 
 export default class UserService {
   static createUser = async (data: CreateUserPost) =>

@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import SignIn from '../screens/Auth/SignIn';
-import SignUp from '../screens/Auth/SignUp';
-import {AuthStackParamList} from '../types/navigation';
+import SignIn from '@screens/Auth/SignIn';
+import SignUp from '@screens/Auth/SignUp';
+import {AuthStackParamList} from '../utils/helpers/types/navigation';
 
 const Stack = createStackNavigator<AuthStackParamList>();
 
