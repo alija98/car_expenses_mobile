@@ -1,10 +1,11 @@
 export type CreateUserPost = {
-  username: string;
+  email: string;
   password: string;
   passwordConfirmation: string;
+  name: string;
 };
 
 export type LogInUserPost = {
-  username: string;
+  email: string;
   password: string;
 };

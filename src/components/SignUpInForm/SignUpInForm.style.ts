@@ -5,6 +5,9 @@ interface Style {
   container: ViewStyle;
   input: ViewStyle;
   submitBtn: ViewStyle;
+  paddingRight: ViewStyle;
+  showHide: ViewStyle;
+  positionRelative: ViewStyle;
 
   submitTxt: TextStyle;
 }
@@ -34,4 +37,18 @@ export default StyleSheet.create<Style>({
   submitTxt: {
     color: colors.primary,
   },
+  paddingRight: {
+    paddingRight: 30,
+  },
+  showHide: {
+    width: 14,
+    height: 14,
+    position: 'absolute',
+    right: 10,
+    top: '50%',
+    transform: [{translateY: -7}],
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  positionRelative: {position: 'relative'},
 });

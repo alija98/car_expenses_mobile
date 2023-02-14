@@ -11,7 +11,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import {combineReducers} from '@reduxjs/toolkit';
-import loginSlice from '../store/login';
+import userSlice from './user';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 
@@ -22,7 +22,7 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
-  login: loginSlice,
+  user: userSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

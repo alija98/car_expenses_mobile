@@ -7,28 +7,29 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {colors} from '@constants';
 import {AuthStackParamList} from '@utils/helpers/types/navigation';
 import styles from './SignIn.styles';
-import LoginForm from '@components/LoginForm';
+import LoginForm from '@components/SignUpInForm';
 import {useState} from 'react';
 import LottieView from 'lottie-react-native';
 import {useAppDispatch} from '@store/store';
-import {loginUser} from '@store/login';
+import {signInUser} from '@store/user';
+import {SignUpInFormInputs} from '@utils/helpers/types/common';
 
 const SignIn = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation<StackNavigationProp<AuthStackParamList>>();
   const dispatch = useAppDispatch();
 
-  const onValueChange = (type: 'username' | 'password', value: string) => {
+  const onValueChange = (type: SignUpInFormInputs, value: string) => {
     if (type === 'password') {
       setPassword(value);
-    } else if (type === 'username') {
-      setUsername(value);
+    } else if (type === 'email') {
+      setEmail(value);
     }
   };
   const onSingIn = () => {
-    dispatch(loginUser({email: username, password}));
+    dispatch(signInUser({email: email, password}));
   };
 
   return (
@@ -40,13 +41,13 @@ const SignIn = () => {
             source={require('../../../assets/car_lottie.json')}
             autoPlay
             loop
+            speed={0.75}
           />
         </View>
-
         <View style={styles.bottomContainer}>
           <Text style={styles.title}>Sign In</Text>
           <LoginForm
-            username={username}
+            email={email}
             password={password}
             onChange={onValueChange}
             onSubmit={onSingIn}
