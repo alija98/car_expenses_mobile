@@ -14,7 +14,6 @@ interface Style {
 
 export default StyleSheet.create<Style>({
   container: {
-    flex: 1,
     paddingHorizontal: sizes.marginHorizontal,
   },
   inputLabel: {

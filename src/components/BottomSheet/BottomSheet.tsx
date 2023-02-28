@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: SCREEN_HEIGHT - 200,
     borderRadius: 25,
+    flex: 1,
   },
   line: {
     width: 75,
