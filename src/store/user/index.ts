@@ -83,6 +83,7 @@ export const userSlice = createSlice({
       .addCase(signInUser.fulfilled, (state, action) => {
         state.status = 'idle';
         state.errorMessage = '';
+        console.log('tokenina je', action.payload.accessToken);
         state.token = action.payload.accessToken;
         state.name = action.payload.name;
         state.email = action?.payload?.email;

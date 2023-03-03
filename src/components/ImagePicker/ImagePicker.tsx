@@ -9,9 +9,12 @@ import styles from './ImagePicker.style';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {colors} from '@constants';
 
-const ImagePicker = () => {
+type ImagePickerProps = {
+  setSelectedImageData: (data: string | undefined) => void;
+};
+
+const ImagePicker = ({setSelectedImageData}: ImagePickerProps) => {
   const [selectedImageUri, setSelectedImageUri] = useState<string>('');
-  const [selectedImageData, setSelectedImageData] = useState<string>();
 
   const addImgHandler = () =>
     launchImageLibrary(
@@ -44,10 +47,7 @@ const ImagePicker = () => {
       </Touchable>
       {selectedImageUri && (
         <View>
-          <Image
-            style={{width: 100, height: 100}}
-            source={{uri: selectedImageUri}}
-          />
+          <Image style={styles.img} source={{uri: selectedImageUri}} />
         </View>
       )}
     </View>

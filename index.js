@@ -7,9 +7,11 @@ import App from './App';
 import {name as appName} from './app.json';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider as ReduxProvider} from 'react-redux';
-import {persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from '@store/store';
+
+import {injectStore} from '@utils/helpers/getUserToken';
+injectStore(store);
 
 const WrappedApp = () => {
   return (

@@ -16,7 +16,7 @@ export type CarType = {
   id: string;
   brand: string;
   model: string;
-  images: string[];
+  image: string;
   engineType: EngineTypes;
   registrationDate: string;
   nmbrOfKm: number;
@@ -28,9 +28,9 @@ export const TEMP_CAR_1: CarType = {
   id: '1',
   brand: 'Volkswagen',
   model: 'Golf VII',
-  images: [
+  image:
     'https://img.autoabc.lv/volkswagen-golf/volkswagen-golf_2017_Hecbeks_222943336_4.jpg',
-  ],
+
   engineType: 'diesel',
   registrationDate: new Date().toLocaleDateString(),
   nmbrOfKm: 80000,

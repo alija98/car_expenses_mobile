@@ -1,9 +1,10 @@
 import {colors, sizes} from '@constants';
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 interface Style {
   container: ViewStyle;
   addImg: ViewStyle;
+  img: ImageStyle;
 
   addImgTxt: TextStyle;
 }
@@ -26,5 +27,10 @@ export default StyleSheet.create<Style>({
   },
   addImgTxt: {
     color: colors.primary,
+  },
+
+  img: {
+    width: 100,
+    height: 100,
   },
 });

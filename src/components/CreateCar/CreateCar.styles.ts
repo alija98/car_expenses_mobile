@@ -1,4 +1,4 @@
-import {sizes} from '@constants';
+import {colors, sizes} from '@constants';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 interface Style {
@@ -6,10 +6,14 @@ interface Style {
   dropdown1BtnStyle: ViewStyle;
   dropdown1DropdownStyle: ViewStyle;
   dropdown1RowStyle: ViewStyle;
+  addButton: ViewStyle;
+  addButtonDisabled: ViewStyle;
+  placeholder: ViewStyle;
 
   inputLabel: TextStyle;
   dropdown1BtnTxtStyle: TextStyle;
   dropdown1RowTxtStyle: TextStyle;
+  addButtonTxt: TextStyle;
 }
 
 export default StyleSheet.create<Style>({
@@ -45,5 +49,25 @@ export default StyleSheet.create<Style>({
     color: '#444',
     textAlign: 'left',
     fontSize: sizes.m,
+  },
+  addButton: {
+    backgroundColor: colors.primaryBlue,
+    width: 120,
+    marginTop: sizes.l,
+    alignSelf: 'flex-end',
+    paddingHorizontal: sizes.s,
+    paddingVertical: sizes.xs,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: sizes.xxs,
+  },
+  addButtonDisabled: {
+    backgroundColor: colors.primaryBlueDisabled,
+  },
+  addButtonTxt: {
+    color: colors.primary,
+  },
+  placeholder: {
+    height: 330,
   },
 });

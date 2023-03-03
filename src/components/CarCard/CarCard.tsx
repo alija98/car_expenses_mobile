@@ -13,7 +13,12 @@ const CarCard = ({car}: CarCardProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.imgWrapper}>
-        <Image source={{uri: car.images[0]}} style={styles.img} />
+        <Image
+          source={{
+            uri: 'data:image/jpeg;base64,' + car.image,
+          }}
+          style={styles.img}
+        />
       </View>
       <View style={styles.info}>
         <Text style={styles.carBrand}>

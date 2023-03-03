@@ -8,13 +8,14 @@ import FlashMessage from 'react-native-flash-message';
 
 function App(): JSX.Element {
   const authToken = useAppSelector(state => state.user.token);
+  console.log(authToken);
 
   return (
     <NavigationContainer
       onReady={() => {
         RNBootSplash.hide();
       }}>
-      {true ? <BottomTabNavigator /> : <AuthStack />}
+      {authToken ? <BottomTabNavigator /> : <AuthStack />}
       <FlashMessage position="bottom" />
     </NavigationContainer>
   );

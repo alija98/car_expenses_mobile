@@ -1,8 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {Dimensions, FlatList, View} from 'react-native';
 import {FloatingAction} from 'react-native-floating-action';
 
-import {CarType, TEMP_CAR_1, TEMP_CAR_2} from '@utils/helpers/types/common';
+import {CarType} from '@utils/helpers/types/common';
 import CarCard from '@components/CarCard/CarCard';
 import styles from './Cars.style';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
@@ -10,6 +10,7 @@ import BottomSheet, {
   BottomSheetRefProps,
 } from '@components/BottomSheet/BottomSheet';
 import CreateCar from '@components/CreateCar';
+import CarsService from '../../services/carsService';
 
 const ItemSeparator = () => {
   return <View style={styles.separator} />;
@@ -29,13 +30,26 @@ const Cars = () => {
 
   const {height: SCREEN_HEIGHT} = Dimensions.get('window');
 
-  const getCars = () => {
-    setCars([TEMP_CAR_1, TEMP_CAR_2]);
+  const getCars = useCallback(async () => {
+    try {
+      const {data} = await CarsService.getCars();
+      setCars(data);
+    } catch (error: any) {
+      console.log(error.response);
+    }
+  }, []);
+
+  const scrollBottomSheet = (
+    height: number,
+    shouldRefreshCars: boolean = false,
+  ) => {
+    ref.current?.scrollTo(height);
+    shouldRefreshCars && getCars();
   };
 
   useEffect(() => {
     getCars();
-  }, []);
+  }, [getCars]);
 
   return (
     <GestureHandlerRootView style={styles.container}>
@@ -48,12 +62,12 @@ const Cars = () => {
       <FloatingAction
         actions={actions}
         onPressItem={() => {
-          ref.current?.scrollTo(-(SCREEN_HEIGHT * 0.65));
+          scrollBottomSheet(-(SCREEN_HEIGHT * 0.65));
         }}
       />
       <BottomSheet ref={ref}>
         <View style={styles.bottomSheet}>
-          <CreateCar />
+          <CreateCar scrollBottomSheet={scrollBottomSheet} />
         </View>
       </BottomSheet>
     </GestureHandlerRootView>
